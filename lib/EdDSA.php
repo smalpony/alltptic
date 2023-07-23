@@ -4,6 +4,7 @@ namespace Elliptic;
 use Elliptic\EdDSA\KeyPair;
 use Elliptic\EdDSA\Signature;
 
+
 class EdDSA {
     
     public $curve;

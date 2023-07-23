@@ -1,5 +1,4 @@
 <?php
-
 namespace Elliptic;
 
 use Elliptic\Curve\PresetCurve;

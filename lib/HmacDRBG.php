@@ -1,6 +1,5 @@
 <?php
-
-namespace Elliptic;
+namespace Elliptic; 
 
 class HmacDRBG
 {

@@ -1,7 +1,7 @@
 
 # Fast Elliptic Curve Cryptography in PHP
 
-
+ 
 ## Information
 
 This library is a PHP port of [elliptic](https://github.com/indutny/elliptic), a great JavaScript ECC library.

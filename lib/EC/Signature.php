@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 namespace Elliptic\EC;
 
 use Elliptic\Utils;
